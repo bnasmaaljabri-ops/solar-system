@@ -1,0 +1,152 @@
+
+/* الإعدادات العامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* خلفية الموقع */
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background: linear-gradient(135deg, #050816, #101b3d, #24134a);
+    color: white;
+    line-height: 1.8;
+    position: relative;
+}
+
+/* خلفية النجوم المتحركة */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 70% 20%, #8ddcff, transparent),
+        radial-gradient(2px 2px at 40% 80%, white, transparent),
+        radial-gradient(3px 3px at 85% 65%, #b8a5ff, transparent),
+        radial-gradient(2px 2px at 10% 75%, white, transparent);
+
+    background-size: 300px 300px;
+    animation: stars 5s ease-in-out infinite alternate;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* رأس الموقع */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #111b45, #48256f);
+}
+
+header h1 {
+    font-size: 42px;
+    color: #8ddcff;
+    margin-bottom: 15px;
+}
+
+header p {
+    font-size: 19px;
+    color: #e0e7ff;
+}
+
+/* قائمة التنقل */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+    background: #080e24;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: #5742a5;
+    color: #8ddcff;
+}
+
+/* محتوى الصفحات */
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+/* الأقسام */
+section {
+    background: rgba(255,255,255,0.07);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 18px;
+    border: 1px solid rgba(141,220,255,0.2);
+}
+
+section h2 {
+    color: #8ddcff;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 18px;
+    color: #e0e7ff;
+}
+
+/* الصور */
+section img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(90,130,255,0.3);
+}
+
+/* تذييل الموقع */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #080e24;
+    color: #aab8dc;
+}
+
+/* حركة النجوم */
+@keyframes stars {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* تنسيق الهواتف */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
